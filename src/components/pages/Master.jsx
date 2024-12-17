@@ -238,7 +238,7 @@ const Master = () => {
     dispatch(fetchItems());
     dispatch(fetchMerk());
   }, []);
-
+// maulana
   const isFormValid =
     formData.nama && formData.harga && formData.tahun && formData.jarakTempuh;
 
