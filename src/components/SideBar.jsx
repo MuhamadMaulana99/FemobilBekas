@@ -34,12 +34,12 @@ export const SideBar = () => {
   const open = Boolean(anchorEl);
   // const location = useLocation();
 
-  useEffect(() => {
-    const token = localStorage.getItem("userToken");
-    if (!token && location.pathname !== "/login") {
-      navigate("/login");
-    }
-  }, [location, navigate]);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("userToken");
+  //   if (!token && location.pathname !== "/login") {
+  //     navigate("/login");
+  //   }
+  // }, [location, navigate]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -67,7 +67,7 @@ export const SideBar = () => {
 
   return (
     <div>
-      {location.pathname !== "/login" ? (
+      {/* {location.pathname !== "/login" ? ( */}
         <Box sx={{ display: "flex" }}>
           <AppBar position="fixed">
             <Toolbar variant="dense">
@@ -90,7 +90,7 @@ export const SideBar = () => {
               <IconButton color="inherit" onClick={handleClick}>
                 <Avatar sx={{ width: 40, height: 40 }}>{userRole?.name?.split(" ").map(word => word.charAt(0)).join("").toUpperCase()}</Avatar>
               </IconButton>
-              <Menu
+              {/* <Menu
                 component={Link}
                 to="/login"
                 anchorEl={anchorEl}
@@ -109,7 +109,7 @@ export const SideBar = () => {
                 <MenuItem onClick={handleLogout}>
                   <Logout sx={{ mr: 1 }} /> Logout
                 </MenuItem>
-              </Menu>
+              </Menu> */}
             </Toolbar>
           </AppBar>
 
@@ -153,7 +153,7 @@ export const SideBar = () => {
               <Typography variant="h6">{userRole?.name?.toUpperCase()}</Typography>
             </Box>
             <List>
-              <ListItem button component={Link} to="/home" onClick={toggleSidebar}>
+              <ListItem button component={Link} to="/" onClick={toggleSidebar}>
                 <ListItemText primary="Home" />
               </ListItem>
               <Divider variant="middle" />
@@ -189,16 +189,17 @@ export const SideBar = () => {
             }}
           >
             <Routes>
-              <Route path="/home" element={<Home />} />
+              <Route path="/" element={<Home />} />
+              {/* <Route path="/home" element={<Home />} /> */}
               <Route path="/merek" element={<Merek />} />
               <Route path="/master" element={<Master />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Box>
         </Box>
-      ) : (
-        <Login />
-      )}
+      {/* // ) : (
+      //   <Login />
+      // )} */}
     </div>
   );
 };
