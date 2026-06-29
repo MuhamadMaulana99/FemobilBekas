@@ -149,7 +149,7 @@ export const SideBar = () => {
                 height: "100px", // Adjust height as needed
               }}
             >
-              <Avatar sx={{ width: 56, height: 56, marginBottom: 1 }}>{userRole?.name?.split(" ").map(word => word.charAt(0)).join("").toUpperCase()}</Avatar>
+              <Avatar   src="/logoMobil.jpeg" sx={{ width: 56, height: 56, marginBottom: 1 }}>{userRole?.name?.split(" ").map(word => word.charAt(0)).join("").toUpperCase()}</Avatar>
               <Typography variant="h6">{userRole?.name?.toUpperCase()}</Typography>
             </Box>
             <List>
